@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfume Mini Game Hint</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>✨ Mine Wish </h1>
+
+    <img id="perfumeImg" src="images/perfume.png" alt="Perfume Bottle" class="perfume-img">
+
+    <p class="scent">🌿 Scent: citrus, clean, airy</p>
+
+    <div class="buttons">
+      <button data-scent="Citrus 💧" data-color="#FDE68A">Citrus</button>
+      <button data-scent="Floral 🌸" data-color="#FBCFE8">Floral</button>
+      <button data-scent="Fresh 🍃" data-color="#BBF7D0">Fresh</button>
+    </div>
+
+    <div class="ui-preview">
+      <h2> 💛 Guess who ??? </h2>
+      <p class="error-msg hidden">⚠️ Error: Presenter not defined</p>
+    </div>
+
+    <button id="revealPresenter">Reveal Presenter</button>
+  </div>
+
+  <!-- Popup เฉลย -->
+  <div id="hintPopup" class="popup hidden">
+    <div class="popup-content">
+      <img id="hintImgPopup" src="images/presenter.png" alt="Hint Presenter">
+      <p class="caption-popup">6.9 นี้รู้กันทั่วประเทศ 🦊💛</p>
+      <button id="closePopup">Close</button>
+    </div>
+  </div>
+
+  <script src="perfume.js"></script>
+</body>
+</html>
