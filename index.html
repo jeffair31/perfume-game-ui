@@ -1,40 +1,51 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfume Mini Game Hint</title>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+  <title>Perfume Secret Game</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h1>✨ Mine Wish </h1>
+    <h1>✨ Mine Wish</h1>
 
+    <!-- รูปน้ำหอม -->
     <img id="perfumeImg" src="images/perfume.png" alt="Perfume Bottle" class="perfume-img">
 
+    <!-- ส่วนเลือกกลิ่น -->
     <p class="scent">🌿 Scent: citrus, clean, airy</p>
-
     <div class="buttons">
       <button data-scent="Citrus 💧" data-color="#FDE68A">Citrus</button>
       <button data-scent="Floral 🌸" data-color="#FBCFE8">Floral</button>
       <button data-scent="Fresh 🍃" data-color="#BBF7D0">Fresh</button>
     </div>
 
+    <!-- Mini UI -->
     <div class="ui-preview">
       <h2> 💛 Guess who ??? </h2>
-      <p class="error-msg hidden">⚠️ Error: Presenter not defined <br> Please Try Again ... </p>
+      <p id="hintEmoji">Hint: 🦊🎂 + 💛 + 🧴</p>
     </div>
 
+    <!-- ช่องใส่รหัส -->
+    <input type="text" id="codeInput" placeholder="Enter the secret code...">
     <button id="revealPresenter">Reveal Presenter</button>
   </div>
 
   <!-- Popup เฉลย -->
-  <div id="hintPopup" class="popup hidden">
+  <div id="hintPopup" class="popup">
     <div class="popup-content">
       <img id="hintImgPopup" src="images/presenter.png" alt="Hint Presenter">
-      <p class="caption-popup">6.9 นี้รู้กันทั่วประเทศ 🦊💛 <br>#JANUAPRESENTER</p>
+      <p class="caption-popup">🎉 Correct! 🌟 Meet the presenter 💛🦊🍋🌸</p>
       <button id="closePopup">Close</button>
+    </div>
+  </div>
+
+  <!-- Popup Error -->
+  <div id="errorPopup" class="popup">
+    <div class="popup-content">
+      <p>❌ Wrong code! Try again.</p>
+      <button id="closeError">OK</button>
     </div>
   </div>
 
