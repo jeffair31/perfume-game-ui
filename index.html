@@ -4,36 +4,50 @@
   <meta charset="UTF-8">
   <title>Perfume Secret Game</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Baloo+2&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <h1>✨ Mine Wish</h1>
 
     <!-- รูปน้ำหอม -->
-    <img id="perfumeImg" src="images/perfume.png" alt="Perfume Bottle" class="perfume-img">
+    <div class="perfume-img-container">
+      <img id="perfumeImg" src="images/perfume.png" alt="Perfume Bottle" class="perfume-img">
+    </div>
 
     <!-- ส่วนเลือกกลิ่น -->
-    <p class="scent">🌿 Scent: citrus, clean, airy</p>
+    <p class="scent">Pear 🍐, Freesia 🌼, Bergamot 🍋</p>
     <div class="buttons">
-      <button data-scent="Citrus 💧" data-color="#FDE68A">Citrus</button>
-      <button data-scent="Floral 🌸" data-color="#FBCFE8">Floral</button>
-      <button data-scent="Fresh 🍃" data-color="#BBF7D0">Fresh</button>
+      <button data-scent="Pear 🍐" data-color="#BBF7D0">Pear</button>
+      <button data-scent="Freesia 🌼" data-color="#FDE68A">Freesia</button>
+      <button data-scent="Bergamot 🍋" data-color="#FBCFE8">Bergamot</button>
     </div>
 
     <!-- Mini UI -->
     <div class="ui-preview">
-      <h2> 💛 Guess who ??? </h2>
+      <h2>💛 Guess who ???</h2>
       <p id="hintEmoji">Hint: 🦊🎂 + 💛 + 🧴</p>
+      <p id="presenterText">🌟 Presenter: ???</p>
     </div>
 
-    <!-- ช่องใส่รหัส -->
-    <input type="text" id="codeInput" placeholder="Enter the secret code...">
-    <button id="revealPresenter">Reveal Presenter</button>
+    <!-- ปุ่ม Reveal Presenter -->
+    <button id="showCodeButton">Reveal Presenter</button>
+  </div>
+
+  <!-- Popup ใส่รหัส -->
+  <div id="codePopup" class="popup hidden">
+    <div class="popup-content">
+      <p>Enter the secret code:</p>
+      <input type="text" id="codeInput" placeholder="Enter the secret code...">
+      <div style="margin-top:10px;">
+        <button id="checkCodeButton">Confirm</button>
+        <button id="closeCodePopup">Cancel</button>
+      </div>
+    </div>
   </div>
 
   <!-- Popup เฉลย -->
-  <div id="hintPopup" class="popup">
+  <div id="hintPopup" class="popup hidden">
     <div class="popup-content">
       <img id="hintImgPopup" src="images/presenter.png" alt="Hint Presenter">
       <p class="caption-popup">🎉 Correct! 🌟 Meet the presenter 💛🦊🍋🌸</p>
@@ -42,13 +56,13 @@
   </div>
 
   <!-- Popup Error -->
-  <div id="errorPopup" class="popup">
+  <div id="errorPopup" class="popup hidden">
     <div class="popup-content">
       <p>❌ Wrong code! Try again.</p>
       <button id="closeError">OK</button>
     </div>
   </div>
 
-  <script src="perfume.js"></script>
+  <script src="perfume.js" defer></script>
 </body>
 </html>
