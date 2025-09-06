@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- สำคัญสำหรับมือถือ -->
     <title>Perfume Secret Game</title>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -44,15 +46,15 @@
     <!-- Popup ใส่รหัส -->
     <div id="codePopup" class="popup hidden">
       <div class="popup-content">
-        <p>Enter the secret code:</p>
+        <h3>Enter the secret code 🔑</h3>
         <input
           type="text"
           id="codeInput"
           placeholder="Enter the secret code..."
         />
-        <div style="margin-top: 10px">
+        <div class="popup-actions">
           <button id="checkCodeButton">Confirm</button>
-          <button id="closeCodePopup">Cancel</button>
+          <button id="closeCodePopup" class="cancel">Cancel</button>
         </div>
       </div>
     </div>
@@ -67,8 +69,8 @@
         />
         <p class="caption-popup">
           🎉 RENJUN of NCT🌟 <br />
-          A perfect match with Janua Mine Wish 🦊💛 <br />The scent he will never
-          forget
+          A perfect match with Janua Mine Wish 🦊💛 <br />
+          The scent he will never forget
         </p>
         <button id="closePopup">Close</button>
       </div>
@@ -77,7 +79,10 @@
     <!-- Popup Error -->
     <div id="errorPopup" class="popup hidden">
       <div class="popup-content">
-        <p>❌ Wrong code! Try again.</p>
+        <p>
+          ❌ Oops! That’s not the secret key 🔑 <br> 
+          Try again, little fox 🦊💛
+        </p>
         <button id="closeError">OK</button>
       </div>
     </div>

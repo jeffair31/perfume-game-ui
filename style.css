@@ -1,177 +1,91 @@
-/* ---------- BODY ---------- */
 body {
   font-family: "Fredoka One", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
-  margin: 0;
+  text-align: center;
   background: linear-gradient(135deg, #ffe8f0, #fff8e7);
+  height: 100vh;
+  margin: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* ให้ container เริ่มจากบน */
-  padding: 20px;
+  align-items: center;
 }
 
-/* ---------- CONTAINER ---------- */
+/* Container */
 .container {
   font-family: "Baloo 2", sans-serif;
   background-color: white;
+  transition: background-color 0.5s ease;
+  padding: 20px;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  width: 95%;
-  max-width: 480px;
-  padding: 25px;
+
+  width: 100%;
+  max-width: 420px;
+  height: auto;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  transition: background-color 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
 }
 
-/* ---------- HEADER ---------- */
-h1 {
-  font-family: "Fredoka One", cursive;
-  font-size: 32px;
-  margin-bottom: 15px;
-  text-align: center;
-}
+h1 { font-size: 30px; margin-bottom: 10px; }
+.ui-preview { margin-top: 20px; margin-bottom: 25px; }
+.ui-preview p { margin: 8px 0; }
+.scent { margin: 15px 0; min-height:50px; }
+input { padding: 10px; width: 80%; border-radius: 10px; border:1px solid #ccc; margin-bottom:15px; text-align:center; }
+button { padding:10px 20px; border:none; border-radius:12px; background:#ffb703; font-size:16px; cursor:pointer; transition:0.3s; }
+button:hover { background:#ff9e00; }
+.perfume-img { width:160px; height:auto; transition: transform 0.3s; }
 
-/* ---------- SCENT ---------- */
-.scent {
-  font-size: 18px;
-  margin: 15px 0;
-  min-height: 50px;
-  text-align: center;
-}
-
-/* ---------- BUTTONS ---------- */
-button {
-  font-size: 18px;
-  padding: 12px 24px;
-  margin: 5px;
-  border: none;
-  border-radius: 12px;
-  background: #ffb703;
-  cursor: pointer;
-  transition: 0.3s;
-}
-button:hover { background: #ff9e00; }
-
-/* ---------- PERFUME IMAGE ---------- */
-.perfume-img {
-  width: 180px;
-  height: auto;
-  margin-bottom: 20px;
-  transition: transform 0.3s;
-}
-
-/* ---------- MINI UI ---------- */
-.ui-preview {
-  margin-top: 20px;
-  margin-bottom: 25px;
-  text-align: center;
-}
-.ui-preview p {
-  font-size: 20px;
-  margin: 8px 0;
-}
-
-/* ---------- INPUT ---------- */
-input {
-  padding: 12px;
-  width: 80%;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 15px;
-  text-align: center;
-  font-size: 16px;
-}
-
-/* ---------- POPUP ---------- */
+/* Popup overlay */
 .popup {
-  position: fixed;
-  top:0; left:0; right:0; bottom:0;
+  position: fixed; top:0; left:0; right:0; bottom:0;
   background: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.3s;
-  z-index: 10;
+  display:flex; justify-content:center; align-items:center;
+  visibility:hidden; opacity:0; transition:0.3s;
+  z-index: 1000;
 }
-.popup.show {
-  visibility: visible;
-  opacity: 1;
-}
+.popup.show { visibility:visible; opacity:1; }
 .popup-content {
-  background:white;
-  padding: 20px;
-  border-radius: 15px;
-  text-align:center;
-  max-width: 350px;
+  background:white; padding:20px; border-radius:15px; text-align:center;
+  max-width:400px; width:90%;
+  box-sizing: border-box;
   animation: pop 0.4s ease;
 }
 .popup img {
-  max-width: 200px;
+  max-width: 100%;
+  max-height: 300px;
+  width: auto; height: auto;
+  object-fit: contain;
+  border-radius: 12px;
   margin-bottom: 15px;
 }
-.caption-popup {
-  font-family:"Poppins",sans-serif;
-  font-size:16px;
-  line-height:1.5;
-}
+.caption-popup { font-family:"Poppins",sans-serif; font-size:16px; line-height:1.5; }
+#hintEmoji { font-size:20px; margin-top:8px; }
 
-/* ---------- ANIMATIONS ---------- */
-@keyframes pop {
-  from { transform: scale(0.5); opacity:0; }
-  to { transform: scale(1); opacity:1; }
-}
-.bounce {
-  animation: bounce 0.5s;
-}
-@keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
-.scale {
-  animation: scaleUp 0.4s;
-}
-@keyframes scaleUp {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-.shake {
-  animation: shake 0.5s;
-}
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
-}
+@keyframes pop { from{transform:scale(0.5);opacity:0;} to{transform:scale(1);opacity:1;} }
 
-/* ---------- HINT EMOJI ---------- */
-#hintEmoji {
-  font-size: 22px;
-  margin-top: 8px;
-}
+/* Animations */
+.bounce { animation: bounce 0.5s; }
+@keyframes bounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);} }
+.scale { animation: scaleUp 0.4s; }
+@keyframes scaleUp { 0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);} }
+.shake { animation: shake 0.5s; }
+@keyframes shake { 0%{transform:translateX(0);}25%{transform:translateX(-5px);}50%{transform:translateX(5px);}75%{transform:translateX(-5px);}100%{transform:translateX(0);} }
 
-/* ---------- RESPONSIVE ---------- */
+/* Responsive */
 @media (max-width: 480px) {
   .container {
     max-width: 95%;
-    padding: 20px;
     border-radius: 12px;
+    margin: 10px auto;
   }
-  h1 { font-size: 28px; }
-  .perfume-img { width: 160px; }
-  button { font-size: 16px; padding: 10px 20px; }
-  .scent { font-size: 16px; }
-  .ui-preview p { font-size: 18px; }
-}
-@media (max-width: 360px) {
-  h1 { font-size:26px; }
-  .perfume-img { width: 140px; }
-  button { font-size: 14px; padding: 8px 16px; }
-  .scent { font-size: 14px; }
-  .ui-preview p { font-size: 16px; }
+  h1 { font-size: 22px; }
+  .perfume-img { width: 130px; }
+  button { font-size: 14px; padding: 8px 14px; }
+  .popup-content { max-width: 95%; padding: 15px; }
+  .popup img { max-height: 220px; }
+  .caption-popup { font-size: 14px; }
 }
