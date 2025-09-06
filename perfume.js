@@ -6,10 +6,10 @@ class Perfume {
 
   revealPresenter() {
     const input = document.getElementById("codeInput").value.trim().toLowerCase();
-    const correctCode = "230300yellowjanua";
+    const correctCode = "23032000yellow";
 
     if(input === correctCode){
-      document.getElementById("presenterText").textContent = "🌟 Presenter: Renjun 💚";
+      // document.getElementById("presenterText").textContent = "🌟 Presenter: Renjun 💚";
       document.getElementById("hintPopup").classList.add("show");
       document.getElementById("codePopup").classList.remove("show");
     } else {
